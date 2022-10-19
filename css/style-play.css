@@ -1,0 +1,25 @@
+.game {
+  min-width: 800px;
+}
+
+.game .display {
+  font-size: 2em;
+}
+
+.game .input {
+}
+
+.game .progress {
+}
+
+.display .neutral {
+  color: var(--primary-dark);
+}
+
+.display .invalid {
+  color: red;
+}
+
+.display .valid {
+  color: var(--primary);
+}

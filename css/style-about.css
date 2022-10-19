@@ -1,0 +1,41 @@
+/*#region Profile Cards*/
+
+.profile {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  max-width: 400px;
+  margin: 80px auto 16px;
+  position: relative;
+
+  min-height: 240px;
+
+  padding: 64px 32px 32px;
+
+  border-radius: 8px;
+  border: 1px solid var(--primary);
+  background-color: #f8fcff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 6px -1px, rgba(0, 0, 0, 0.06) 0 2px 4px -1px;
+}
+
+.profile > img {
+  position: absolute;
+  top: -64px;
+  width: 128px;
+  height: 128px;
+
+  border-radius: 128px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 6px -1px, rgba(0, 0, 0, 0.06) 0 2px 4px -1px;
+}
+
+.profile > em {
+  color: var(--primary);
+}
+
+.profile > .links {
+  margin-top: auto;
+}
+
+/*#endregion*/
