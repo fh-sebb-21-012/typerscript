@@ -1,40 +1,38 @@
 # Development
 
-## Serve instructions
+## Prerequisites
 
-### Serve using docker
+### Cloning the Project
 
-The webserver is configured to run at port 80 internally.
-You can bind any port to the container by using `-p xxxx:80` like in the example below.
+Get the source files with `git clone https://github.com/h45h74x/typerscript` or the download button and `cd` into the
+project directory.
 
-#### Cloning the Project
-Get the source files with `git clone https://github.com/h45h74x/typerscript` or the download button.
+## Hosting the webpage
 
-Then `cd` into the project directory.
+### Host using docker
 
-#### Building the image
-`docker build -t typerscript:latest .`
+1. Build the image with `docker build -t typerscript:latest .`
+2. Run the image using `docker run --rm --init -p 8080:80 typerscript:latest`
 
-#### Running the image
-`docker run --rm --init -p 8080:80 typerscript:latest`
-
-#### Accessing the webpage
-Once the webserver is up, the page can be accessed by browsing to [http://localhost:8080](http://localhost:8080)
-
-
-### Serve using docker-compose
+### Host using docker-compose
 
 The webserver is configured to run at port 80 internally.
 You can bind any port to the container by changing the binding in the `docker-compose.yml` file.
 
-#### Cloning the Project
-Get the source files with `git clone https://github.com/h45h74x/typerscript` or the download button.
+1. Build and run the image with `docker-compose up`
 
-Then `cd` into the project directory.
+### Host with a webserver
 
-#### Building and running the image
-Run `docker-compose up` in the project directory.
+TyperScript can also be hosted using any webserver.
 
-#### Accessing the webpage
-Once the webserver is up, the page can be accessed by browsing to [http://localhost:8080](http://localhost:8080)
+For example, it can be hosted with busybox's httpd server:
 
+```shell
+cd ./src
+busybox httpd -fvp 8080
+```
+
+## Accessing the webpage
+
+Once the webserver is up, the page can be accessed by browsing to [http://localhost:8080](http://localhost:8080),
+depending on the port you specified

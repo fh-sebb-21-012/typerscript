@@ -2,7 +2,7 @@
 
 ## Development
 
-If you want to build TyperScript yourself, take a look at the [development instructions](./DEVELOPMENT.md).
+If you want to build TyperScript yourself, or want to self-host this application, take a look at the [development instructions](./DEVELOPMENT.md).
 
 ## Development
 
