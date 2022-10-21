@@ -43,8 +43,6 @@ function createGameUi() {
           insertSpan(event.data, "invalid");
         }
 
-        progress.value = event.target.value.length;
-
         if (event.target.value === text) {
           // todo win
           console.log("Yay you did it");
@@ -60,6 +58,8 @@ function createGameUi() {
       case "deleteWordBackward":
         break;
     }
+
+    progress.value = event.target.value.length;
     displayUpcoming.innerHTML = text.substring(cursor);
   }
 
