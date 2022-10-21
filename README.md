@@ -48,7 +48,7 @@ Then `cd` into the project directory.
 
 Once the webserver is up, the page can be accessed by browsing to [http://localhost:8080](http://localhost:8080)
 
-### Serve using docker-compose
+### Serving using docker-compose
 
 The webserver is configured to run at port 80 internally.
 You can bind any port to the container by changing the binding in the `docker-compose.yml` file.
