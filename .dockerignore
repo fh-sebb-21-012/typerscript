@@ -1,0 +1,12 @@
+.editorconfig
+.idea
+.git*
+
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+node_modules
+
+LICENSE.txt
+README.md
