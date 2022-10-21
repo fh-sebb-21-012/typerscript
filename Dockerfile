@@ -4,5 +4,5 @@ RUN adduser -D typerscript
 USER typerscript
 
 WORKDIR /home/typerscript
-COPY . .
+COPY ./src .
 CMD ["busybox", "httpd", "-f", "-v", "-p", "80"]
