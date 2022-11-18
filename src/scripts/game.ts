@@ -1,49 +1,51 @@
-function createGame() {
-  const rootContainer = document.createElement("div");
+function createGame() : HTMLDivElement{
 
-  const menuPauseContainer = document.createElement("div");
+  const rootContainer : HTMLDivElement = document.createElement("div");
+
+  const menuPauseContainer : HTMLDivElement = document.createElement("div");
 
   rootContainer.appendChild(createGameUi());
   return rootContainer;
 }
 
-function createGameUi() {
-  const presentationMode = false;
-  const text = "The quick brown fox jumps over the lazy dog";
+function createGameUi() : HTMLDivElement{
+  const presentationMode : boolean = false;
+  const text : string = "The quick brown fox jumps over the lazy dog";
 
-  const gameContainer = document.createElement("div");
+  const gameContainer : HTMLDivElement = document.createElement("div");
   gameContainer.className = "game flex flex-col"
 
-  const displayUpcoming = makeSpan(text, "neutral");
+  const displayUpcoming : HTMLElement = makeSpan(text, "neutral");
 
-  const display = document.createElement("p");
+  const display : HTMLParagraphElement = document.createElement("p");
   display.className = "display";
   display.appendChild(displayUpcoming);
 
-  const progress = document.createElement("progress");
+  const progress : HTMLProgressElement = document.createElement("progress");
   progress.max = text.length;
   progress.value = 0;
 
-  const input = document.createElement("input"); // todo hide but always focus
+  const input : HTMLInputElement = document.createElement("input"); // todo hide but always focus
   input.type = "text";
   input.className = "input";
   input.addEventListener('input', onInputChanged);
   input.addEventListener('change', onInputChanged);
   input.addEventListener('propertychange', onInputChanged);
 
-  function onInputChanged(event) {
-    const cursor = event.target.value.length;
+  function onInputChanged(event : InputEvent) {
+    const target = event.target as HTMLInputElement; //todo target is weird
+    const cursor = target.value.length;
     switch (event.inputType) {
       // Character typed
       case "insertText":
-        const currentChar = text.at(cursor - 1);
+        const currentChar : string = text.charAt(cursor - 1);
         if (presentationMode || event.data === currentChar) {
           insertSpan(currentChar, "valid");
         } else {
           insertSpan(event.data, "invalid");
         }
 
-        if (event.target.value === text) {
+        if (target.value === text) {
           // todo win
           console.log("Yay you did it");
           input.disabled = true;
@@ -59,11 +61,11 @@ function createGameUi() {
         break;
     }
 
-    progress.value = event.target.value.length;
+    progress.value = target.value.length;
     displayUpcoming.innerHTML = text.substring(cursor);
   }
 
-  function insertSpan(content, className = "") {
+  function insertSpan(content : string, className : string = "") {
     display.insertBefore(makeSpan(content, className), displayUpcoming);
   }
 
@@ -73,8 +75,8 @@ function createGameUi() {
   return gameContainer;
 }
 
-function makeSpan(content, className = "") {
-  const span = document.createElement("span");
+function makeSpan(content : string, className :string = "") : HTMLSpanElement {
+  const span : HTMLSpanElement = document.createElement("span");
   span.innerText = content;
   span.className = className;
   return span;
