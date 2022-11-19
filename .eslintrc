@@ -1,4 +1,7 @@
 {
+  "rules": {
+    "curly": "error"
+  },
   "extends": [
     "prettier"
   ]
