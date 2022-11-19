@@ -4,3 +4,8 @@
 node_modules
 dist
 .cache
+
+package-lock.json
+
+src/**/*.js
+src/**/*.js.map
