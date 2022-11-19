@@ -1,0 +1,27 @@
+{
+  "name": "typerscript",
+  "version": "1.0.0",
+  "description": "## Development",
+  "main": "src/index.html",
+  "scripts": {
+    "install": "npm install",
+    "build": "npx tsc -b",
+    "host": "npx http-server ./src",
+    "run-debug": "npm run build && npm run host"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fh-sebb-21-012/typerscript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fh-sebb-21-012/typerscript/issues"
+  },
+  "homepage": "https://github.com/fh-sebb-21-012/typerscript#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "tsc": "^2.0.4",
+    "typescript": "^4.9.3"
+  }
+}
