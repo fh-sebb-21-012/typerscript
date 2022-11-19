@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
-    "outFile": "dist/script.js",
+    "target": "ES2020",
+    "module": "ES2020",
     "strict": true,
     "sourceMap": true,
     "skipLibCheck": true,
