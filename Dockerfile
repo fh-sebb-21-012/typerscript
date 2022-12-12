@@ -1,8 +1,13 @@
-FROM busybox:1.35
+FROM node:alpine
 
-RUN adduser -D typerscript
-USER typerscript
+WORKDIR /typerscript
 
-WORKDIR /home/typerscript
-COPY ./src .
-CMD ["busybox", "httpd", "-f", "-v", "-p", "80"]
+COPY ["package.json", "package-lock.json*", "tsconfig.json", "./"]
+COPY ["./src", "./src"]
+
+RUN npm install --omit=dev --loglevel verbose
+RUN npm install typescript -g
+RUN tsc -b
+
+CMD [ "npx", "http-server", "./src" ]
+
