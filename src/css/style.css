@@ -1,3 +1,37 @@
+/*#region Fonts*/
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 1 999;
+  src: url('../font/Inter.ttf') format("truetype-variations");
+}
+
+@font-face {
+  font-family: 'Open Sans Italic';
+  font-weight: 1 999;
+  src: url('../font/OpenSans-Italic.ttf') format("truetype-variations");
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 1 999;
+  src: url('../font/OpenSans.ttf') format("truetype-variations");
+}
+
+@font-face {
+  font-family: 'JetBrains Mono Italic';
+  font-weight: 1 999;
+  src: url('../font/JetBrainsMono-Italic.ttf') format("truetype-variations");
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-weight: 1 999;
+  src: url('../font/JetBrainsMono.ttf') format("truetype-variations");
+}
+
+/*#endregion*/
+
 :root {
   /*
     TypeScript colors
@@ -18,30 +52,87 @@
   --foreground: #000000;
   --foreground-dark: #ffffff;
 
+  --background-gradient-1:rgba(232, 245, 255, 1);
+  --background-gradient-2:rgba(247, 254, 255, 1);
+
+  --color: #212326;
+
   /* Fonts */
   --font-size: 1em;
-  --font: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  --font-code: "Cascadia Mono-SemiLight", Consolas, monospace;
+
+  --font-heading: "Inter", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --font-body: "Open Sans", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --font-code: "Jetbrains Mono", Consolas, monospace;
+}
+
+* {
+  transition: all 0.2s ease;
+}
+
+html,
+body {
+  color: var(--color);
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 html {
   color: var(--foreground);
   font-size: var(--font-size);
-  font-family: var(--font);
-  overflow-x: hidden;
+  font-family: var(--font-body);
+
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
 }
 
-html,
 body {
-  height: 100%
-
+  overflow-x: hidden;
+  margin: 0;
+  background: var(--background-gradient-1);
+  background: linear-gradient(229deg, var(--background-gradient-1) 0%, var(--background-gradient-2) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
+/*#region Code*/
+
+code {
+  font-family: monospace, monospace;
+  font-size: 1em;
+  padding: 4px 6px;
+}
+
+.code-section {
+  margin: 16px 32px;
+  padding: 6px 32px;
+  line-height: 1.4em;
+  min-height: 32px;
+}
+
+.code-section, pre, code {
+  border-radius: 6px;
+  background: rgb(221, 235, 246);
+  border: 1px solid rgb(187, 214, 236);
+  color: #2a2a2a;
+  font-family: var(--font-code);
+  overflow: auto;
+}
+
+.code-section pre {
+  background: transparent;
+  border: none;
+  color: inherit;
+}
+
+/*#endregion*/
 
 /*#region Anchors*/
 
 a {
   color: inherit;
   padding-right: 0.7em;
+  transition: background-color 0.2s ease;
 }
 
 a[target="_blank"] {
@@ -50,9 +141,9 @@ a[target="_blank"] {
 
 a[target="_blank"]:after {
   position: absolute;
-  margin: 0 0 0.4em 0.2em;
+  margin: 0 -0.2em 0.4em 0.2em;
 
-  content: "🡕";
+  content: "\1F855"; /*"🡕"*/
   font-size: 0.8em;
 
   opacity: 0.8;
@@ -100,6 +191,8 @@ nav,
 main,
 header,
 footer {
+  width: 100%;
+  box-sizing: border-box;
   padding: 0 16px;
 }
 
@@ -112,8 +205,13 @@ footer {
 /*#region Navbar*/
 
 nav {
+  color: #fff;
   line-height: 3.5rem;
   font-size: 1.5rem;
+}
+
+nav * {
+  transition: opacity 0.2s ease;
 }
 
 nav a {
@@ -129,25 +227,44 @@ nav a:hover {
   background-color: var(--primary-dark);
 }
 
-nav > * {
-  height: 100%;
-
-  display: inline-flex;
-}
-
 nav > .title {
   margin-right: 8px;
   font-weight: bold;
 }
 
-nav > .left {
+nav .left {
   flex-grow: 1;
 }
 
-nav > .left > *,
-nav > .right > * {
+nav .left > *,
+nav .right > * {
   display: inline-block;
   padding: 0 12px;
+}
+
+nav > *, .nav-large > *, .nav-small > * {
+  height: 100%;
+  display: inline-flex;
+}
+
+.nav-large {
+  display: flex;
+  flex-grow: 1;
+}
+
+.nav-small {
+  display: none;
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 610px) {
+  .nav-large {
+    display: none;
+  }
+
+  .nav-small {
+    display: flex;
+  }
 }
 
 /*#endregion*/
@@ -157,12 +274,16 @@ nav > .right > * {
 header {
   width: 100%;
 
-  min-height: 160px;
-
-  padding: 32px;
+  min-height: 260px;
 
   color: var(--foreground-dark);
   background-color: var(--primary-dark);
+}
+
+header p {
+  box-sizing: content-box;
+  max-width: 90%;
+  hyphens: auto;
 }
 
 header h1 {
@@ -179,6 +300,7 @@ header .button {
 /*#region Main*/
 
 main {
+  display: block;
   margin: 16px auto auto;
   max-width: 1200px;
   padding: 0 32px 32px;
@@ -194,10 +316,38 @@ footer {
 
 /*#endregion*/
 
+/*#region Headings*/
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.heading-main {
+  display: block;
+}
+
+.heading-sub {
+  display: block;
+  font-weight: 500;
+  opacity: 0.86;
+}
+
+/*#endregion*/
+
 /*#region Notification Boxes*/
 
+@media screen and (max-width: 560px) {
+  .box {
+    margin: 16px 4px !important;
+  }
+
+  .code-section {
+    margin: 16px 4px !important;
+  }
+}
+
 .box {
-  margin: 8px 32px;
+  margin: 16px 32px;
   padding: 16px 32px;
   min-height: 60px;
 
@@ -209,7 +359,7 @@ footer {
 
 .box-info {
   border: 1px solid #ccebff;
-  background-color: #f5fbff;
+  background-color: #e5f2ff;
 }
 
 .box-success {
@@ -261,6 +411,10 @@ footer {
 
 .flex {
   display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .flex-col {

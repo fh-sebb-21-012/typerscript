@@ -20,21 +20,35 @@
   <meta name="theme-color" content="#faf9f8">
 </head>
 <body class="flex flex-col">
-<nav class="flex flex-center flex-row">
+<nav class="flex flex-row">
   <div class="title">
     <span>TyperScript</span>
   </div>
 
-  <div class="left">
-    <a href="play.html">Play</a>
-    <a href="leaderboard.html">Leaderboard</a>
-    <a href="./index.html">About</a>
+  <div class="nav-large">
+    <div class="left">
+      <a href="play.html">Play</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="./index.html">About</a>
+    </div>
+
+    <div class="right">
+      <a title="Settings">
+        <img class="icon" src="./img/settings.svg" alt="settings" />
+      </a>
+    </div>
   </div>
 
-  <div class="right">
-    <a title="Settings">
-      <img class="icon" src="./img/settings.svg" alt="settings"/>
-    </a>
+  <div class="nav-small">
+    <div class="left"></div>
+    <div class="right">
+      <a title="Menu">
+        <img class="icon" src="./img/menu.svg" alt="menu" />
+      </a>
+      <a title="Settings">
+        <img class="icon" src="./img/settings.svg" alt="settings" />
+      </a>
+    </div>
   </div>
 </nav>
 <header class="flex flex-center flex-col">
@@ -48,23 +62,124 @@
 
 <main>
   <section>
-    <h2>About the Project</h2>
+    <h2>tl;dr</h2>
     <p>TyperScript is a typing test application, created for the Web Development course at FH Hagenberg,
-      Upper Austria, and written in TypeScript.</p>
+      Upper Austria, made to demonstrate the TypeScript programming language.</p>
     <p>With TyperScript, you can measure your typing speed and save your highscores to the leaderboard.</p>
-  </section>
 
-    <div class="box box-info flex flex-center">Aside from being programmed in TypeScript, TyperScript is in no way affiliated with the
+    <div class="box box-info flex flex-center">Aside from being programmed in TypeScript, TyperScript is in no way
+      affiliated with the
       TypeScript project itself!
     </div>
+  </section>
 
+  <section>
+    <h2>Summary</h2>
+    <h3>Introducing TypeScript</h3>
+    <h4>Why restrictions are actually good for you</h4>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+      typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+      PageMaker including versions of Lorem Ipsum.
+    </p>
+    <h4>What is a strongly-typed programming language</h4>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+      typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+      PageMaker including versions of Lorem Ipsum.
+    </p>
+
+    <h3>Using TypeScript</h3>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+      scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+      Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+      PageMaker including versions of Lorem Ipsum.</p>
+    <h4>Introducing interfaces and custom types</h4>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+      scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+      Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+      PageMaker including versions of Lorem Ipsum.</p>
+    <h4>Type narrowing</h4>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+      scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+      Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+      PageMaker including versions of Lorem Ipsum.</p>
+
+    <h3>
+      <span class="heading-main">Code comparison</span>
+      <span class="heading-sub">Making code safer and easier to read by using TS instead of JS</span>
+    </h3>
+
+    <p>This is an <code>inline</code> example</p>
+
+    <p>This is a code-section:</p>
+    <div class="code-section">
+       <pre>
+code, .code-section {
+  background: #c5c5c5;
+  border: 1px solid #b6b6b6;
+  border-radius: 6px;
+  color: #2a2a2a;
+  font-family: var(--font-code);
+  min-height: 32px;
+  line-height: 32px;
+  padding: 6px;
+  width: 100%;
+}</pre>
+    </div>
+
+    <h3>Summary and key takeaways</h3>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+      scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+      Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+      PageMaker including versions of Lorem Ipsum.</p>
+    <h4>Pros and Cons</h4>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+      scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+      Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+      PageMaker including versions of Lorem Ipsum.</p>
+    <h4>Useful sites to get started</h4>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+      scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+      Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+      PageMaker including versions of Lorem Ipsum.</p>
+
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="#" target="_blank">Source 1</a></li>
+      <li><a href="#" target="_blank">Source 2</a></li>
+      <li><a href="#" target="_blank">Source 3</a></li>
+      <li><a href="#" target="_blank">Source 4</a></li>
+      <li><a href="#" target="_blank">Source 5</a></li>
+    </ul>
+  </section>
 
   <section>
     <h2>Developers</h2>
-    <div class="flex flex-row">
+    <div class="flex flex-row flex-wrap">
 
       <div class="profile">
-        <img src="https://avatars.githubusercontent.com/u/115830322" alt="profile picture of Lukas Aichinger">
+        <img
+          src="./img/avatar_lukas.jpg"
+          alt="profile picture of Lukas Aichinger">
         <h3>Lukas</h3>
         <em>Web technology is the future!</em>
         <p>As a Software Engineering student at FH Hagenberg and employee at Lidl Austria, Lukas' mother tongue might as
@@ -75,7 +190,7 @@
       </div>
 
       <div class="profile">
-        <img src="https://avatars.githubusercontent.com/u/27204033" alt="profile picture of Simon Gruber">
+        <img src="./img/avatar_simon.jpg" alt="profile picture of Simon Gruber">
         <h3>Simon</h3>
         <em>Automate all the things!</em>
         <p>Simon's day job as C# developer can barely cover his urge to program handy
