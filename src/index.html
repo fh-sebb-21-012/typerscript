@@ -83,15 +83,15 @@
 
     <h4>Strongly-typed programming languages</h4>
     <p>
-      Programming languages are called "strongly typed" when variable types (e.g.
-      number, string, boolean) must be explicitly defined. TypeScript is a strongly-typed language, meaning that
-      variables must be declared with a specific type. The compiler will check that the variable is used consistently
+      Programming languages like TypeScript are called "strongly typed" because variable types (e.g.
+      number, string, boolean) must be explicitly defined. The compiler will check that the variable is used
+      consistently
       with that type.
     </p>
 
     <h4>Why restrictions are actually good for you</h4>
     <p>
-      Whilst restrictive by nature, TypeScript's type system can help catch errors early in the development process,
+      Whilst restrictive by nature, TypeScripts type system can help catch errors early in the development process,
       improving the quality and maintainability of your project.
     </p>
     <p>
@@ -101,7 +101,7 @@
       <li>
         <h5>Catching errors early</h5>
         <p>
-          With TypeScript's type system, the compiler can check that variables are used consistently
+          With TypeScripts type system, the compiler can check that variables are used consistently
           with their declared types. For example, if a variable is declared as a number and a string is assigned to it,
           the compiler will
           give an error. This can help catch errors early in the development process, before they make it to
@@ -112,16 +112,16 @@
       <li>
         <h5>Improved code readability</h5>
         <p>
-          TypeScript's type system can also serve to improve the readability of the codebase. By explicitly defining the
+          TypeScripts type system can also serve to improve the readability of the code. By explicitly defining the
           types of variables, functions, and interfaces, the structure and expected behavior of the code can be
-          understood more easily. This can make it easier for new developers to understand and work with the codebase.
+          understood more easily. This can make it easier for new developers to understand and work on the project.
         </p>
       </li>
 
       <li>
         <h5>Enforce consistency</h5>
         <p>
-          TypeScript's type system can help enforce consistency in the codebase by ensuring that variables are used
+          TypeScripts type system can help enforce consistency in the codebase by ensuring that variables are used
           consistently with their declared types. This improves maintainability and reduce the likelihood of bugs.
         </p>
       </li>
@@ -129,8 +129,9 @@
       <li>
         <h5>Better refactoring</h5>
         <p>
-          TypeScript's type system can also make it easier to refactor code. With explicit type
-          information, the compiler can check that changes to the codebase do not break existing functionality. This can
+          TypeScripts type system can also make it easier to refactor code. With explicit type
+          information, the compiler is able to validate, that changes to the codebase don't break existing
+          functionality. This can
           save
           time and resources when making changes to the codebase.
         </p>
@@ -139,9 +140,9 @@
       <li>
         <h5>Type narrowing</h5>
         <p>
-          TypeScript allows you to perform type narrowing, which means that the type of a variable can
-          be narrowed down based on the value of the variable. This allows for more accurate type checking and improved
-          developer understanding of the codebase. This can help to catch errors early and improve the overall code
+          TypeScript allows you to perform type narrowing, meaning that the type of a variable can
+          be narrowed down based on its value, allowing for more accurate type checking and helping
+          developers understand the projects code. This can help to catch errors early and improve the overall code
           quality.
         </p>
       </li>
@@ -149,12 +150,10 @@
       <li>
         <h5>Interfaces and custom types</h5>
         <p>
-          TypeScript allows you to define interfaces, which are a way to describe the
-          structure of an object. This can be used to ensure that objects passed to a function have a certain structure
-          and
-          properties. TypeScript also allows you to define custom types which can be used to define the structure of the
-          data. This
-          can help in organizing and structuring the codebase making it more readable and maintainable.
+          TypeScript allows developers to define interfaces, which are used to describe an objects structure. Developers
+          can make sure that objects used in their application contain specific properties. TypeScript also features
+          custom types, restricting the values a variable can possibly hold. This can help in organizing and structuring
+          the codebase, resulting in more readable and maintainable code.
       </li>
     </ul>
 
@@ -186,11 +185,11 @@ console.log(point); // { x: 3, y: 4 }</pre>
     </div>
 
     <p>
-      In the small example above, an interface is used to define the properties of an object representing a point in the
-      2D space. It has two properties: "x" and "y", both of type number.
+      In the example above, an interface is used to define the properties of an object representing a 2D point. It has
+      two numeric properties: "x" and "y".
     </p>
     <p>
-      When we create a variable called "point", adhering to the "Point" interface, The type
+      When we create a variable called "point", adhering to the "Point" interface, the type
       checker will ensure that all required properties defined in the interface are specified and that the values are of
       the
       correct type.
@@ -215,33 +214,31 @@ const user: Person = { firstName: 'John', lastName: 'Doe' };
 console.log(getFullName(user)); // John Doe</pre>
     </div>
     <p>
-      Here, we defined an interface called "Person" that has two properties "firstName" and "lastName", both of type
-      string. The function <code>getFullName()</code> takes in a parameter of type <code>Person</code> and returns the
-      full name as a string. The
-      function expects an object that adheres to the <code>Person</code> interface.
+      Here, the interface called "Person" has two properties "firstName" and "lastName", both of type
+      string. The parameter passed to the function <code>getFullName()</code> needs to be of type <code>Person</code>,
+      resulting the function to return the Persons full name as a string.
     </p>
 
     <h4>Type narrowing</h4>
     <p>
-      Type narrowing in TypeScript allow developers to determine the type of a variable based on its value, allowing for
-      more accurate type checking, especially if the data comes from an outside source (e.g. API calls, ...).
+      Type narrowing in TypeScript allow developers to determine the type of a variable based on its value during
+      runtime, allowing for
+      more accurate type checking, especially if the data comes from outside sources (e.g. API calls, ...).
     </p>
-    <h5>Primitive types</h5>
-    <p></p>
-    <div class="code-section">
-      <pre>
-let value = 'hello';
+    <!--    <h5>Primitive types</h5>-->
+    <!--    <p></p>-->
+    <!--    <div class="code-section">-->
+    <!--      <pre>-->
+    <!--let value = 'hello';-->
 
-if (typeof value === 'string') {
-    value.toUpperCase(); // type is narrowed to string
-}</pre>
-    </div>
-    <p>
-      In the above example, we have a variable called "value" and we are checking if its type is a string. If the type
-      is a
-      string, we can then access the <code>toUpperCase()</code> method on the variable, which is specific to the string
-      type.
-    </p>
+    <!--if (typeof value === 'string') {-->
+    <!--    value.toUpperCase(); // type is narrowed to string-->
+    <!--}</pre>-->
+    <!--    </div>-->
+    <!--    <p>-->
+    <!--      In the above example, we are checking the type of the "value" variable. If the type-->
+    <!--      is a string, we can then safely access the string-only <code>toUpperCase()</code> method on the variable.-->
+    <!--    </p>-->
 
     <h4>Commonly used operators for type narrowing</h4>
     <p>
@@ -252,8 +249,8 @@ if (typeof value === 'string') {
       <li>
         <h5>typeof</h5>
         <p>
-          If you want to check if a variable holds a primitive value, you can use the <code>typeof</code> operator. The
-          typeof operator returns a string that represents the type of the variable:
+          For checking if a variable holds a primitive value, you can use the <code>typeof</code> operator. It returns a
+          string that represents the type of the variable and can be used like in the following example:
         </p>
         <div class="code-section">
           <pre>
@@ -268,10 +265,10 @@ if (typeof value === 'string') {
 
       <li>
         <h5>instanceof</h5>
-        <p>This type of narrowing is used to check if a variable is an instance of a specific
-          class or constructor function. The instanceof operator returns a boolean that indicates whether the variable
-          is an
-          instance of the specified class or constructor. For example:</p>
+        <p>
+          This operator can be used to check if a variable is an instance of the given
+          class and returns "true" if it is. For example:
+        </p>
         <div class="code-section">
           <pre>class Point {
   x: number;
@@ -289,9 +286,10 @@ if (value instanceof Point) {
 
       <li>
         <h5>in</h5>
-        <p>This type of narrowing is used to check if a property or key is present in an object. The in
-          operator returns a boolean that indicates whether the specified property or key is present in the object. For
-          example:</p>
+        <p>
+          This operator can be used to check if a property or key is present in an object and returns "true" if it is.
+          For example:
+        </p>
         <div class="code-section">
           <pre>
 let value = { x: 3, y: 4 };
@@ -306,7 +304,7 @@ if ('x' in value && typeof value.x === "number") {
 
     <h4>User-defined type guards</h4>
     <p>
-      Value types can also be narrowed down using a user-defined type guard function:
+      Value types can also be narrowed down using user-defined type guard functions:
     </p>
     <div class="code-section">
           <pre>
@@ -331,10 +329,12 @@ if (hasAddress(person)) {
       <code>hasAddress()</code> returns a type predicate indicating whether the "address" property is present in the
       given value.
     </p>
-    <p>
-      The TypeScript compiler will recognize user-defined type guard functions and treat variables passed to them
-      accordingly.
-    </p>
+    <div class="box box-info">
+      <strong>Hint:</strong>
+      <span class="flex flex-col flex-center">
+        The TypeScript compiler will recognize type narrowing and treat variables passed to them accordingly in the respective branches of the if-condition.
+      </span>
+    </div>
   </section>
   <section>
     <h3>
@@ -372,7 +372,7 @@ const obj: { name: string, age: number } = { name: 'John', age: 30 };
 obj.age = 'thirty';  // this will give an error</pre>
     </div>
     <p>
-      In TypeScript, we define the type of the obj variable, and the compiler will check that it is used consistently
+      In TypeScript, we define the type of the variable "obj", and the compiler will check that it is used consistently
       with that type, this will prevent unexpected type changes and give error if it occurs, while in JavaScript this is
       not the case.
     </p>
@@ -384,7 +384,7 @@ obj.age = 'thirty';  // this will give an error</pre>
 
     <h4>Pros and Cons of using TypeScript</h4>
     <p>
-      TypeScript's type system and other features can help improve developer productivity and make it easier to
+      TypeScripts type system and other features can help improve developer productivity and make it easier to
       maintain and scale code. However, it can also add complexity to the development process and may require a steeper
       learning curve for developers who are not familiar with strongly-typed languages.
     </p>
@@ -401,15 +401,15 @@ obj.age = 'thirty';  // this will give an error</pre>
       <li>
         <h5>Strongly-typed language</h5>
         <p>
-          TypeScript's type system can help catch errors early in the development process by
+          TypeScripts type system can help catch errors early in the development process by
           ensuring that variables are used consistently with their declared types. This can help prevent bugs and makes
-          the project's code more maintainable in the long run.
+          the projects code more maintainable in the long run.
         </p>
       </li>
       <li>
         <h5>Improved code readability</h5>
         <p>
-          TypeScript's type system also helps developers read existing code. By explicitly defining the types of
+          TypeScripts type system also helps developers read existing code. By explicitly defining the types of
           variables, functions, and interfaces, it becomes easier to understand the structure and expected behavior of
           the code.
         </p>
@@ -417,7 +417,7 @@ obj.age = 'thirty';  // this will give an error</pre>
       <li>
         <h5>Enforced consistency</h5>
         <p>
-          TypeScript's type system can help enforce consistency in the codebase by ensuring that
+          TypeScripts type system can help enforce consistency in the codebase by ensuring that
           variables are used consistently with their declared types. This consistency enables easier maintainability
           over time and severely reduces the likelihood of bugs in the code.
         </p>
@@ -425,14 +425,14 @@ obj.age = 'thirty';  // this will give an error</pre>
       <li>
         <h5>Better refactoring</h5>
         <p>
-          TypeScript's type system can also make it easier to refactor code. With explicit type
-          information, the compiler can check that changes to the codebase do not break existing functionality.
+          TypeScripts type system can also make it easier to refactor code. With explicit type
+          information, the compiler can check that changes to the codebase don't break existing functionality.
         </p>
       </li>
       <li>
         <h5>Interfaces and custom types</h5>
         <p>
-          TypeScript allows you to define interfaces, enabling developers to check whether variables in the code have a certain structure and properties before accessing them.
+          TypeScript allows for defining interfaces, enabling developers to check whether variables in the code have a certain structure and contain specific properties before accessing them.
         </p>
       </li>
     </ul>
@@ -441,8 +441,8 @@ obj.age = 'thirty';  // this will give an error</pre>
       <li>
         <h5>Additional setup and configuration</h5>
         <p>
-          To use TypeScript, developers need to set up the TypeScript compiler and
-          configure the project. This can add some complexity to the development process.
+          To use TypeScript, developers need to set up the compiler and
+          configure the project, adding complexity to the development process.
         </p>
       </li>
 
@@ -458,7 +458,8 @@ obj.age = 'thirty';  // this will give an error</pre>
         <h5>Additional build step</h5>
         <p>
           TypeScript code needs to be transpiled to JavaScript before it can run in a browser or
-          JavaScript runtime. This adds an additional build step to the development process, slowing down the debug workflow.
+          JavaScript runtime. This adds an additional build step to the development process, slowing down the debug
+          workflow.
         </p>
       </li>
     </ul>
@@ -516,7 +517,7 @@ obj.age = 'thirty';  // this will give an error</pre>
         <img src="./img/avatar_simon.jpg" alt="profile picture of Simon Gruber">
         <h3>Simon</h3>
         <em>Automate all the things!</em>
-        <p>Simon's day job as C# developer can barely cover his urge to program handy
+        <p>Simons day job as C# developer can barely cover his urge to program handy
           tools and automate everything he can. Besides studying Software Engineering at FH Hagenberg, he also has a
           passion for Linux, hosting all kinds of services on his servers
           and manages a small media server at home.</p>
