@@ -1,3 +1,29 @@
+section {
+  border-bottom: 1px solid #dfe8ef;
+}
+
+/*region Lists */
+ul li h1,
+ul li h2,
+ul li h3,
+ul li h4,
+ul li h5,
+ul li h6
+{
+  margin-bottom: 0.4em;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: 560;
+}
+
+ul li p {
+  margin-top: 0;
+}
+
+  /*endregion */
+
 /*#region Profile Cards*/
 
 .profile {
