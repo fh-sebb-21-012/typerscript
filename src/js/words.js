@@ -2914,7 +2914,6 @@ export const words = [
   "stay",
   "pierce",
   "muggy",
-  "miscarriage",
   "shareholder",
   "sock",
   "plug",
