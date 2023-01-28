@@ -1,4 +1,4 @@
-import { getRandomSentence, getRandomWord } from "./words.js";
+import { getRandomSentence } from "./words.js";
 import { makeChart } from "./chart.js";
 import { addScore } from "./score.js";
 
@@ -63,13 +63,16 @@ function createGameUi(rootContainer: HTMLDivElement) {
 
   const displayUpcoming = createSpan(text, "neutral");
   const display = createElement("p", "display", displayUpcoming) as HTMLParagraphElement;
+  displayUpcoming.ariaLabel = "The text which has to be typed in order to complete the challenge";
 
   const progress = createElement("progress") as HTMLProgressElement;
   progress.max = text.length;
   progress.value = 0;
+  progress.ariaLabel = "Shows how much of the sentence has already been typed";
 
   const input = createElement("input", "input") as HTMLInputElement;
   input.type = "text";
+  input.ariaLabel = "Input field for the typing challenge";
   input.addEventListener("input", onInputChanged);
 
   const wpmDisplay = createElement("p") as HTMLParagraphElement;
