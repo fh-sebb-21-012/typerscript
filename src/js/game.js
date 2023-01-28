@@ -43,11 +43,14 @@ function createGameUi(rootContainer) {
     const text = getRandomSentence(words);
     const displayUpcoming = createSpan(text, "neutral");
     const display = createElement("p", "display", displayUpcoming);
+    displayUpcoming.ariaLabel = "The text which has to be typed in order to complete the challenge";
     const progress = createElement("progress");
     progress.max = text.length;
     progress.value = 0;
+    progress.ariaLabel = "Shows how much of the sentence has already been typed";
     const input = createElement("input", "input");
     input.type = "text";
+    input.ariaLabel = "Input field for the typing challenge";
     input.addEventListener("input", onInputChanged);
     const wpmDisplay = createElement("p");
     const updateStatsInterval = window.setInterval(updateStats, 1000);
@@ -103,6 +106,9 @@ function createMenu(gameStats) {
     const menuTitle = createElement("h1", "menu-title");
     menuTitle.innerText = "Challenge completed!";
     const menuChart = makeChart(gameStats.wpmHistory, 240, 140);
+    if (menuChart != null) {
+        menuChart.ariaLabel = "A graph showing the typing performance (WPM) over time";
+    }
     const menuStats = createElement("p", "menu-stats");
     menuStats.innerText = "Average WPM: " + Math.round(gameStats.averageWpm());
     const menuSave = createElement("button");
