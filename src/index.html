@@ -190,9 +190,8 @@ console.log(point); // { x: 3, y: 4 }</pre>
       two numeric properties: "x" and "y".
     </p>
     <p>
-      When we create a variable called "point", adhering to the "Point" interface, the type
-      checker will ensure that all required properties defined in the interface are specified and that the values are of
-      the correct type.
+      When the variable "point", adhering to the "Point" interface, is created, the type checker will ensure that all
+      required properties defined in the interface are specified and that the values match their respective type.
     </p>
 
     <h5>Using interfaces and custom types with functions</h5>
@@ -343,8 +342,8 @@ console.log(add(1, 2));</pre>
     </div>
     <p>
       The primary distinction between the two examples is that TypeScript explicitly defines the types of the parameters
-      and the return value, whereas JavaScript does not.
-      By doing this, errors may be found earlier in the development process.
+      and the return value, whereas JavaScript does not. When using TypeScript, the type checker will make it impossible
+      to use the <code>add()</code> function with anything other than two numbers.
     </p>
 
     <div class="code-section">
@@ -358,9 +357,8 @@ const obj: { name: string, age: number } = { name: 'John', age: 30 };
 obj.age = 'thirty';  // this will give an error</pre>
     </div>
     <p>
-      While this is not the case with JavaScript, in TypeScript we can explicitly describe the type of the variable
-      "obj". The
-      compiler prevents unexpected type changes and throws errors if they do occur.
+      Unlike JavasScript, TypeScript also offers the possibility to explicitly describe the type of the variable "obj".
+      The compiler checks the code for incompatible value type changes and throws an error if they do occur.
     </p>
 
   </section>
@@ -492,7 +490,7 @@ obj.age = 'thirty';  // this will give an error</pre>
       <div class="profile">
         <img
           src="./img/avatar_lukas.jpg"
-          alt="profile picture of Lukas Aichinger">
+          alt="profile picture of Lukas Aichinger, wearing a dashing suit, standing upright and smiling">
         <h3>Lukas</h3>
         <em>Web technology is the future!</em>
         <p>As a Software Engineering student at FH Hagenberg and employee at Lidl Austria, Lukas' mother tongue might as
@@ -503,7 +501,7 @@ obj.age = 'thirty';  // this will give an error</pre>
       </div>
 
       <div class="profile">
-        <img src="./img/avatar_simon.jpg" alt="profile picture of Simon Gruber">
+        <img src="./img/avatar_simon.jpg" alt="Profile picture of Simon, lining up his camera for the perfect shot">
         <h3>Simon</h3>
         <em>Automate all the things!</em>
         <p>Simons day job as C# developer can barely cover his urge to program handy
