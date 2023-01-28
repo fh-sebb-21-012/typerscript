@@ -1,35 +1,4 @@
-const scores = [
-  {score: "58", date: "17.10.2022", name: "Simon"},
-  {score: "60", date: "18.10.2022", name: "Simon"},
-  {score: "36", date: "20.10.2022", name: "Simon"},
-  {score: "25", date: "22.10.2022", name: "Simon"},
-  {score: "96", date: "16.10.2022", name: "Simon"},
-  {score: "90", date: "19.10.2022", name: "Simon"},
-  {score: "58", date: "17.10.2022", name: "Simon"},
-  {score: "60", date: "18.10.2022", name: "Simon"},
-  {score: "36", date: "20.10.2022", name: "Simon"},
-  {score: "25", date: "22.10.2022", name: "Simon"},
-  {score: "96", date: "16.10.2022", name: "Simon"},
-  {score: "90", date: "19.10.2022", name: "Simon"},
-  {score: "58", date: "17.10.2022", name: "Simon"},
-  {score: "60", date: "18.10.2022", name: "Simon"},
-  {score: "36", date: "20.10.2022", name: "Lukas"},
-  {score: "25", date: "22.10.2022", name: "Lukas"},
-  {score: "96", date: "16.10.2022", name: "Lukas"},
-  {score: "90", date: "19.10.2022", name: "Lukas"},
-  {score: "58", date: "17.10.2022", name: "Lukas"},
-  {score: "60", date: "18.10.2022", name: "Lukas"},
-  {score: "36", date: "20.10.2022", name: "Lukas"},
-  {score: "25", date: "22.10.2022", name: "Lukas"},
-  {score: "96", date: "16.10.2022", name: "Lukas"},
-  {score: "90", date: "19.10.2022", name: "Lukas"},
-  {score: "58", date: "17.10.2022", name: "Lukas"},
-  {score: "60", date: "18.10.2022", name: "Lukas"},
-  {score: "36", date: "20.10.2022", name: "Lukas"},
-  {score: "25", date: "22.10.2022", name: "Lukas"},
-  {score: "96", date: "16.10.2022", name: "Lukas"},
-  {score: "90", date: "19.10.2022", name: "Lukas"},
-];
+import { getScores } from "./score.js";
 
 function createTable(data) {
   const table = document.createElement("table");
@@ -49,14 +18,13 @@ function populateTableHead(tHead) {
   const row = tHead.insertRow();
 
   makeCell(row, 0, "#", "center");
-  makeCell(row, 1, "Name");
+  makeCell(row, 1, "Score");
   makeCell(row, 2, "Date");
-  makeCell(row, 3, "Score");
 }
 
 function populateTableBody(tBody, data) {
   data
-    .sort((a, b) => Number(a.score) > Number(b.score) ? -1 : 1)
+    .sort((a, b) => Number(a.wpm) > Number(b.wpm) ? -1 : 1)
     .forEach((item, index) => populateTableRow(tBody, item, index));
 }
 
@@ -64,9 +32,8 @@ function populateTableRow(tableComponent, item, index) {
   const row = tableComponent.insertRow();
 
   makeCell(row, 0, (index + 1).toString(), "0px", "center");
-  makeCell(row, 1, item.name, "auto");
-  makeCell(row, 2, item.date, "60px");
-  makeCell(row, 3, item.score, "20px", "center");
+  makeCell(row, 1, Math.round(item.wpm), "auto", "align-end");
+  makeCell(row, 2, new Date(item.date).toLocaleDateString(), "60px");
 }
 
 function makeCell(row, index, content, width="auto", className= "") {
@@ -78,4 +45,4 @@ function makeCell(row, index, content, width="auto", className= "") {
 
 document
   .getElementById("container-leaderboard")
-  .appendChild(createTable(scores));
+  .appendChild(createTable(getScores()));

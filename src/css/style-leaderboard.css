@@ -14,8 +14,12 @@
   padding: 16px 12px;
 }
 
-#container-leaderboard > table .center {
+#container-leaderboard > table .align-center {
   text-align: center;
+}
+
+#container-leaderboard > table .align-end {
+  text-align: end;
 }
 
 #container-leaderboard > table thead td {
