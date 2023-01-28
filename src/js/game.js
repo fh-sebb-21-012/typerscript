@@ -1,3 +1,5 @@
+import { getRandomSentence, getRandomWord } from "./words.js";
+
 function createGame() {
   const rootContainer = document.createElement("div");
 
@@ -9,10 +11,10 @@ function createGame() {
 
 function createGameUi() {
   const presentationMode = false;
-  const text = "The quick brown fox jumps over the lazy dog";
+  const text = getRandomSentence(20);
 
   const gameContainer = document.createElement("div");
-  gameContainer.className = "game flex flex-col"
+  gameContainer.className = "game flex flex-col";
 
   const displayUpcoming = makeSpan(text, "neutral");
 
@@ -27,15 +29,15 @@ function createGameUi() {
   const input = document.createElement("input"); // todo hide but always focus
   input.type = "text";
   input.className = "input";
-  input.addEventListener('input', onInputChanged);
-  input.addEventListener('change', onInputChanged);
-  input.addEventListener('propertychange', onInputChanged);
+  input.addEventListener("input", onInputChanged);
+  input.addEventListener("change", onInputChanged);
+  input.addEventListener("propertychange", onInputChanged);
 
   function onInputChanged(event) {
     const cursor = event.target.value.length;
     switch (event.inputType) {
       // Character typed
-      case "insertText":
+      case "insertText": {
         const currentChar = text.at(cursor - 1);
         if (presentationMode || event.data === currentChar) {
           insertSpan(currentChar, "valid");
@@ -50,13 +52,25 @@ function createGameUi() {
         }
 
         break;
+      }
+
       // Backspace
-      case "deleteContentBackward":
+      case "deleteContentBackward": {
         display.removeChild(display.childNodes[display.childNodes.length - 2]);
         break;
+      }
+
       // Ctrl + Backspace
-      case "deleteWordBackward":
+      case "deleteWordBackward": {
+        const index = event.target.value.lastIndexOf(' ');
+
+        let temp;
+        while ((temp = (display.childNodes.length - 2)) > index) {
+          display.removeChild(display.childNodes[temp]);
+        }
+
         break;
+      }
     }
 
     progress.value = event.target.value.length;
