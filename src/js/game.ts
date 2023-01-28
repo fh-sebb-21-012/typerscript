@@ -84,7 +84,7 @@ function createGameUi(rootContainer: HTMLDivElement) {
   const gameContainer = createElement("div", "game flex flex-col", [display, progress, input, wpmDisplay]);
   rootContainer.appendChild(gameContainer);
 
-  function onInputChanged(event : any) {
+  function onInputChanged(event: any) {
     const cursor = event.target.value.length;
     switch (event.inputType) {
       // Character typed
@@ -149,6 +149,9 @@ function createMenu(gameStats: GameStats): HTMLDivElement {
   menuTitle.innerText = "Challenge completed!";
 
   const menuChart = makeChart(gameStats.wpmHistory, 240, 140);
+  if (menuChart != null) {
+    menuChart.ariaLabel = "A graph showing the typing performance (WPM) over time";
+  }
 
   const menuStats = createElement("p", "menu-stats");
   menuStats.innerText = "Average WPM: " + Math.round(gameStats.averageWpm());
@@ -174,7 +177,7 @@ function createMenu(gameStats: GameStats): HTMLDivElement {
   return createElement(
     "menu",
     "menu flex flex-col",
-    components
+    components,
   ) as HTMLDivElement;
 }
 
