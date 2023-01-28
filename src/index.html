@@ -91,7 +91,7 @@
 
     <h4>Why restrictions are actually good for you</h4>
     <p>
-      Whilst restrictive by nature, TypeScripts type system can help catch errors early in the development process,
+      Whilst restrictive by nature, TypeScript's type system can help catch errors early in the development process,
       improving the quality and maintainability of your project.
     </p>
     <p>
@@ -101,27 +101,29 @@
       <li>
         <h5>Catching errors early</h5>
         <p>
-          With TypeScripts type system, the compiler can check that variables are used consistently
-          with their declared types. For example, if a variable is declared as a number and a string is assigned to it,
-          the compiler will
-          give an error. This can help catch errors early in the development process, before they make it to
-          production, saving time and resources in the long run.
+          The type system in TypeScript allows the compiler to verify that variables are utilized consistently with the
+          types for which they were declared.
+          For instance, the compiler will report an error if a variable is specified as a number and a string is
+          assigned to it.
+          This can assist in catching faults early on in the development process, before they reach production, thus
+          saving time and costs in the long run.
         </p>
       </li>
 
       <li>
         <h5>Improved code readability</h5>
         <p>
-          TypeScripts type system can also serve to improve the readability of the code. By explicitly defining the
-          types of variables, functions, and interfaces, the structure and expected behavior of the code can be
-          understood more easily. This can make it easier for new developers to understand and work on the project.
+          The type system of TypeScript can also help to make the code easier to read.
+          The structure and expected behavior of the code can be understood better by explicitly describing the kinds of
+          variables, functions, and interfaces.
+          New developers may find it simpler to comprehend and work on the project as a result.
         </p>
       </li>
 
       <li>
         <h5>Enforce consistency</h5>
         <p>
-          TypeScripts type system can help enforce consistency in the codebase by ensuring that variables are used
+          TypeScript's type system can help enforce consistency in the codebase by ensuring that variables are used
           consistently with their declared types. This improves maintainability and reduce the likelihood of bugs.
         </p>
       </li>
@@ -129,11 +131,10 @@
       <li>
         <h5>Better refactoring</h5>
         <p>
-          TypeScripts type system can also make it easier to refactor code. With explicit type
-          information, the compiler is able to validate, that changes to the codebase don't break existing
-          functionality. This can
-          save
-          time and resources when making changes to the codebase.
+          The type system of TypeScript can make refactoring code simpler.
+          The compiler can verify that modifications to the codebase don't affect current functionality with the use of
+          explicit type information.
+          When updating the codebase, this can help save time and resources.
         </p>
       </li>
 
@@ -150,7 +151,8 @@
       <li>
         <h5>Interfaces and custom types</h5>
         <p>
-          TypeScript allows developers to define interfaces, which are used to describe an objects structure. Developers
+          TypeScript allows developers to define interfaces, which are used to describe an objects structure, so
+          developers
           can make sure that objects used in their application contain specific properties. TypeScript also features
           custom types, restricting the values a variable can possibly hold. This can help in organizing and structuring
           the codebase, resulting in more readable and maintainable code.
@@ -191,8 +193,7 @@ console.log(point); // { x: 3, y: 4 }</pre>
     <p>
       When we create a variable called "point", adhering to the "Point" interface, the type
       checker will ensure that all required properties defined in the interface are specified and that the values are of
-      the
-      correct type.
+      the correct type.
     </p>
 
     <h5>Using interfaces and custom types with functions</h5>
@@ -225,20 +226,6 @@ console.log(getFullName(user)); // John Doe</pre>
       runtime, allowing for
       more accurate type checking, especially if the data comes from outside sources (e.g. API calls, ...).
     </p>
-    <!--    <h5>Primitive types</h5>-->
-    <!--    <p></p>-->
-    <!--    <div class="code-section">-->
-    <!--      <pre>-->
-    <!--let value = 'hello';-->
-
-    <!--if (typeof value === 'string') {-->
-    <!--    value.toUpperCase(); // type is narrowed to string-->
-    <!--}</pre>-->
-    <!--    </div>-->
-    <!--    <p>-->
-    <!--      In the above example, we are checking the type of the "value" variable. If the type-->
-    <!--      is a string, we can then safely access the string-only <code>toUpperCase()</code> method on the variable.-->
-    <!--    </p>-->
 
     <h4>Commonly used operators for type narrowing</h4>
     <p>
@@ -356,9 +343,9 @@ function add(a: number, b: number): number {
 console.log(add(1, 2));</pre>
     </div>
     <p>
-      The main difference between the two examples is that in TypeScript, the types of the parameters and the return
-      value are explicitly defined, whereas in JavaScript, they are not. This can help catch errors early in the
-      development process.
+      The primary distinction between the two examples is that TypeScript explicitly defines the types of the parameters
+      and the return value, whereas JavaScript does not.
+      By doing this, errors may be found earlier in the development process.
     </p>
 
     <div class="code-section">
@@ -372,9 +359,9 @@ const obj: { name: string, age: number } = { name: 'John', age: 30 };
 obj.age = 'thirty';  // this will give an error</pre>
     </div>
     <p>
-      In TypeScript, we define the type of the variable "obj", and the compiler will check that it is used consistently
-      with that type, this will prevent unexpected type changes and give error if it occurs, while in JavaScript this is
-      not the case.
+      While this is not the case with JavaScript, in TypeScript we can explicitly describe the type of the variable
+      "obj". The
+      compiler prevents unexpected type changes and throws errors if they do occur.
     </p>
 
   </section>
@@ -384,7 +371,7 @@ obj.age = 'thirty';  // this will give an error</pre>
 
     <h4>Pros and Cons of using TypeScript</h4>
     <p>
-      TypeScripts type system and other features can help improve developer productivity and make it easier to
+      TypeScript's features, especially the type system, can help improve developer productivity and make it easier to
       maintain and scale code. However, it can also add complexity to the development process and may require a steeper
       learning curve for developers who are not familiar with strongly-typed languages.
     </p>
@@ -394,14 +381,15 @@ obj.age = 'thirty';  // this will give an error</pre>
       <li>
         <h5>Zero runtime performance overhead</h5>
         <p>
-          Because TypeScript is compiled to JavaScript before execution, using it introduces no additional performance
+          Because TypeScript has to be compiled to JavaScript code before execution, using it introduces no additional
+          performance
           overhead to your application.
         </p>
       </li>
       <li>
         <h5>Strongly-typed language</h5>
         <p>
-          TypeScripts type system can help catch errors early in the development process by
+          TypeScript's type system can help catch errors early in the development process by
           ensuring that variables are used consistently with their declared types. This can help prevent bugs and makes
           the projects code more maintainable in the long run.
         </p>
@@ -409,7 +397,7 @@ obj.age = 'thirty';  // this will give an error</pre>
       <li>
         <h5>Improved code readability</h5>
         <p>
-          TypeScripts type system also helps developers read existing code. By explicitly defining the types of
+          TypeScript's also helps developers read existing code. By explicitly defining the types of
           variables, functions, and interfaces, it becomes easier to understand the structure and expected behavior of
           the code.
         </p>
@@ -417,22 +405,24 @@ obj.age = 'thirty';  // this will give an error</pre>
       <li>
         <h5>Enforced consistency</h5>
         <p>
-          TypeScripts type system can help enforce consistency in the codebase by ensuring that
-          variables are used consistently with their declared types. This consistency enables easier maintainability
-          over time and severely reduces the likelihood of bugs in the code.
+          By ensuring that variables are utilized consistently with their defined types, TypeScript's can assist ensure
+          consistency in the codebase.
+          Because of its consistency, the code is easier to maintain over time, lowering the chance of bugs being
+          introduced.
         </p>
       </li>
       <li>
         <h5>Better refactoring</h5>
         <p>
-          TypeScripts type system can also make it easier to refactor code. With explicit type
+          TypeScript's type system can also make it easier to refactor code. With explicit type
           information, the compiler can check that changes to the codebase don't break existing functionality.
         </p>
       </li>
       <li>
         <h5>Interfaces and custom types</h5>
         <p>
-          TypeScript allows for defining interfaces, enabling developers to check whether variables in the code have a certain structure and contain specific properties before accessing them.
+          With TypeScript's ability to define interfaces, developers can determine whether variables in the code
+          have a specific structure and set of properties before accessing them.
         </p>
       </li>
     </ul>
@@ -465,7 +455,7 @@ obj.age = 'thirty';  // this will give an error</pre>
     </ul>
 
     <p>
-      All in all, using TypeScript over JavaScript in your project can bring benefits like improved code quality and
+      All in all, using TypeScript over JavaScript in your project introduces benefits like improved code quality and
       better code maintainability. In contrast, TypeScript also requires some additional setup, has a steeper learning
       curve than basic JavaScript, and also introduces small a overhead during development.
     </p>
