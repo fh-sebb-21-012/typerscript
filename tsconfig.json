@@ -11,7 +11,8 @@
     "removeComments": true,
     "esModuleInterop": true,
     "preserveConstEnums": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false
   },
   "include": [
     "src/**/*"
