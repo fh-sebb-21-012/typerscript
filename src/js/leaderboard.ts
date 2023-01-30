@@ -1,4 +1,5 @@
 import { getScores, Score } from "./score.js";
+import { registerMenuToggle } from "./menu.js";
 
 function createTable(scores: Score[]) {
   const table = document.createElement("table");
@@ -43,6 +44,10 @@ function makeCell(row: HTMLTableRowElement, index: number, content: number | str
   scoreCell.className = className;
 }
 
-document
-  .getElementById("container-leaderboard")
-  ?.appendChild(createTable(getScores()));
+window.onload = () => {
+  registerMenuToggle();
+
+  document
+    .getElementById("container-leaderboard")
+    ?.appendChild(createTable(getScores()));
+}

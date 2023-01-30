@@ -129,6 +129,10 @@ code {
 
 /*#region Anchors*/
 
+.a-current {
+  text-decoration: underline;
+}
+
 a {
   color: inherit;
   padding-right: 0.7em;
@@ -152,6 +156,15 @@ a[target="_blank"]:after {
 /*#endregion*/
 
 /*#region Buttons*/
+
+.button-icon {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 3.5rem;
+  font-size: 1.5rem;
+}
 
 .button {
   display: inline-block;
@@ -226,7 +239,8 @@ nav a:after {
   background: none;
 }
 
-nav a:hover {
+nav a:hover,
+.button-icon:hover {
   background-color: var(--primary-dark);
 }
 
@@ -265,8 +279,25 @@ nav > *, .nav-large > *, .nav-small > * {
     display: none;
   }
 
-  .nav-small {
+  .nav-small,
+  #nav-small-menu {
     display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: end;
+  }
+
+  #nav-small-menu {
+    display: none;
+  }
+
+  #nav-small-menu,
+  #nav-small-menu > * {
+    width: 100%;
+  }
+
+  #nav-small-menu > * {
+    display: block;
   }
 }
 

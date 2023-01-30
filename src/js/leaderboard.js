@@ -1,4 +1,5 @@
 import { getScores } from "./score.js";
+import { registerMenuToggle } from "./menu.js";
 function createTable(scores) {
     const table = document.createElement("table");
     const tHead = document.createElement("thead");
@@ -32,7 +33,10 @@ function makeCell(row, index, content, width = "auto", className = "") {
     scoreCell.innerHTML = content?.toString();
     scoreCell.className = className;
 }
-document
-    .getElementById("container-leaderboard")
-    ?.appendChild(createTable(getScores()));
+window.onload = () => {
+    registerMenuToggle();
+    document
+        .getElementById("container-leaderboard")
+        ?.appendChild(createTable(getScores()));
+};
 //# sourceMappingURL=leaderboard.js.map

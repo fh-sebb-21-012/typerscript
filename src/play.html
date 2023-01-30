@@ -26,27 +26,23 @@
 
   <div class="nav-large">
     <div class="left">
-      <a href="play.html">Play</a>
+      <a href="play.html" class="a-current">Play</a>
       <a href="leaderboard.html">Leaderboard</a>
       <a href="./index.html">About</a>
-    </div>
-
-    <div class="right">
-      <a title="Settings">
-        <img class="icon" src="./img/settings.svg" alt="settings" />
-      </a>
     </div>
   </div>
 
   <div class="nav-small">
-    <div class="left"></div>
     <div class="right">
-      <a title="Menu">
+      <button id="btn-hamburgerToggle" class="button-icon" title="Menu">
         <img class="icon" src="./img/menu.svg" alt="menu" />
-      </a>
-      <a title="Settings">
-        <img class="icon" src="./img/settings.svg" alt="settings" />
-      </a>
+      </button>
+    </div>
+
+    <div id="nav-small-menu">
+      <a href="play.html" class="a-current">Play</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="./index.html">About</a>
     </div>
   </div>
 </nav>
@@ -77,6 +73,7 @@
     <a href="privacy.html">Privacy</a>
   </p>
 </footer>
+<script src="js/menu.js" type="module"></script>
 <script src="js/game.js" type="module"></script>
 </body>
 
