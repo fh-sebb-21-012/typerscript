@@ -1,6 +1,7 @@
 import { getRandomSentence } from "./words.js";
 import { makeChart } from "./chart.js";
 import { addScore } from "./score.js";
+import { registerMenuToggle } from "./menu.js";
 
 interface GameStats {
   charsPerTick: number,
@@ -181,5 +182,15 @@ function createMenu(gameStats: GameStats): HTMLDivElement {
   ) as HTMLDivElement;
 }
 
-const rootContainer = document.getElementById("container-game") as HTMLDivElement;
-createGameUi(rootContainer);
+window.onload = () => {
+  registerMenuToggle();
+
+  const rootContainer = document.getElementById("container-game") as HTMLDivElement;
+
+  if (rootContainer == null) {
+    console.error("Could not find root container");
+    return;
+  }
+
+  createGameUi(rootContainer);
+}

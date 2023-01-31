@@ -1,6 +1,7 @@
 import { getRandomSentence } from "./words.js";
 import { makeChart } from "./chart.js";
 import { addScore } from "./score.js";
+import { registerMenuToggle } from "./menu.js";
 const words = 10;
 function createElement(type, className = undefined, children = undefined) {
     const element = document.createElement(type);
@@ -129,6 +130,13 @@ function createMenu(gameStats) {
     ].filter(c => c);
     return createElement("menu", "menu flex flex-col", components);
 }
-const rootContainer = document.getElementById("container-game");
-createGameUi(rootContainer);
+window.onload = () => {
+    registerMenuToggle();
+    const rootContainer = document.getElementById("container-game");
+    if (rootContainer == null) {
+        console.error("Could not find root container");
+        return;
+    }
+    createGameUi(rootContainer);
+};
 //# sourceMappingURL=game.js.map

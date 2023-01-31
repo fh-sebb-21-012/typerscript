@@ -28,25 +28,21 @@
     <div class="left">
       <a href="play.html">Play</a>
       <a href="leaderboard.html">Leaderboard</a>
-      <a href="./index.html">About</a>
-    </div>
-
-    <div class="right">
-      <a title="Settings">
-        <img class="icon" src="./img/settings.svg" alt="settings" />
-      </a>
+      <a href="./index.html" class="a-current">About</a>
     </div>
   </div>
 
   <div class="nav-small">
-    <div class="left"></div>
     <div class="right">
-      <a title="Menu">
+      <button id="btn-hamburgerToggle" class="button-icon" title="Menu">
         <img class="icon" src="./img/menu.svg" alt="menu" />
-      </a>
-      <a title="Settings">
-        <img class="icon" src="./img/settings.svg" alt="settings" />
-      </a>
+      </button>
+    </div>
+
+    <div id="nav-small-menu">
+      <a href="play.html">Play</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="./index.html" class="a-current">About</a>
     </div>
   </div>
 </nav>
@@ -524,5 +520,6 @@ obj.age = 'thirty';  // this will give an error</pre>
     <a href="privacy.html">Privacy</a>
   </p>
 </footer>
+<script src="js/menu.js" type="module"></script>
 </body>
 </html>
